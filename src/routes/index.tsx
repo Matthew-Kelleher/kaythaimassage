@@ -279,28 +279,6 @@ function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* CTA */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-purple-deep" />
-        <div
-          className="absolute inset-0 opacity-10"
-          style={{ backgroundImage: `url(${thaiPattern})`, backgroundSize: "200px" }}
-        />
-        <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-gold mb-4">Ready to Feel Better?</h2>
-          <p className="text-gold-light/50 mb-8 max-w-lg mx-auto text-sm">
-            Book your appointment today and experience the healing power of authentic Thai massage.
-          </p>
-          <a
-            href="tel:0857496528"
-            className="inline-flex items-center gap-2 bg-gold px-10 py-4 text-sm font-semibold tracking-wider uppercase text-purple-deep hover:bg-gold-light transition-colors"
-          >
-            <Phone className="h-5 w-5" />
-            Call 085 749 6528
-          </a>
-        </div>
-      </section>
     </div>
   );
 }
