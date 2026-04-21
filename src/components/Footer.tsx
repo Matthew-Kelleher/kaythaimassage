@@ -7,9 +7,9 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid md:grid-cols-3 gap-12">
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <img src={logoIcon} alt="" width={80} height={80} className="h-[80px] w-auto" />
-              <span className="font-display text-lg font-semibold text-gold">Kay Thai Massage</span>
+            <div className="flex items-center -space-x-1 mb-4">
+              <img src={logoIcon} alt="" width={52} height={52} className="h-[52px] w-auto" />
+              <span className="font-display text-lg font-bold text-gold tracking-wide uppercase">Kay Thai Massage</span>
             </div>
             <p className="text-sm leading-relaxed">
               Authentic Thai massage therapy in the heart of Kilkenny. Original Thai Massage — experience traditional healing for total relaxation.
