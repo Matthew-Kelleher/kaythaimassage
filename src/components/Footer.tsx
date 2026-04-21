@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-12">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <img src={logoIcon} alt="" width={56} height={56} className="h-[56px] w-auto" />
+              <img src={logoIcon} alt="" width={80} height={80} className="h-[80px] w-auto" />
               <span className="font-display text-lg font-semibold text-gold">Kay Thai Massage</span>
             </div>
             <p className="text-sm leading-relaxed">
