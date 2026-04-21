@@ -138,22 +138,24 @@ function HomePage() {
             ))}
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            <AnimatePresence mode="popLayout">
-              {filteredServices.map((s, i) => {
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeDuration}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.25, ease: "easeInOut" }}
+              className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto"
+            >
+              {filteredServices.map((s) => {
                 const visiblePricing = activeDuration === "All"
                   ? s.pricing
                   : s.pricing.filter((p) => p.duration === activeDuration);
 
                 return (
-                  <motion.div
+                  <div
                     key={s.name}
-                    layout
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.95 }}
-                    transition={{ duration: 0.3, delay: i * 0.05 }}
-                    className="bg-card rounded-lg p-7 border border-border hover:shadow-lg transition-all duration-300 group"
+                    className="bg-card rounded-lg p-7 border border-border hover:shadow-lg transition-shadow duration-300 group"
                   >
                     <div className="flex items-start justify-between mb-3">
                       <h3 className="font-display text-lg font-semibold text-purple-deep group-hover:text-purple-mid transition-colors">{s.name}</h3>
@@ -166,11 +168,11 @@ function HomePage() {
                       ))}
                     </div>
                     <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
-                  </motion.div>
+                  </div>
                 );
               })}
-            </AnimatePresence>
-          </div>
+            </motion.div>
+          </AnimatePresence>
         </div>
       </section>
 
