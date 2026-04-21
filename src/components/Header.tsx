@@ -22,6 +22,7 @@ export default function Header() {
 
         <nav className="hidden md:flex items-center gap-8">
           {[
+            ["Approach", "approach"],
             ["Services", "services"],
             ["Testimonials", "testimonials"],
             ["Contact", "contact"],
@@ -52,6 +53,7 @@ export default function Header() {
       {open && (
         <div className="md:hidden bg-purple-deep border-t border-purple-mid/30 px-6 py-4 flex flex-col gap-4">
           {[
+            ["Approach", "approach"],
             ["Services", "services"],
             ["Testimonials", "testimonials"],
             ["Contact", "contact"],
