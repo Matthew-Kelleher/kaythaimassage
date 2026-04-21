@@ -1,4 +1,5 @@
 import { MapPin, Phone, Clock } from "lucide-react";
+
 import logoIcon from "@/assets/logo.png";
 
 export default function Footer() {
