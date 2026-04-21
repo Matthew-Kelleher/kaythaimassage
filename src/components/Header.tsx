@@ -27,7 +27,7 @@ export default function Header() {
           </span>
         </a>
 
-        <nav className="hidden md:flex items-center gap-10">
+        <nav className="hidden lg:flex items-center gap-10">
           {[
             ["Services", "services"],
             ["Testimonials", "testimonials"],
@@ -45,19 +45,19 @@ export default function Header() {
 
         <a
           href="tel:0857496528"
-          className="hidden md:inline-flex items-center gap-2 rounded-sm bg-gold px-6 py-2.5 text-sm font-semibold tracking-wider uppercase text-purple-deep hover:bg-gold-light transition-colors"
+          className="hidden lg:inline-flex items-center gap-2 rounded-sm bg-gold px-6 py-2.5 text-sm font-semibold tracking-wider uppercase text-purple-deep hover:bg-gold-light transition-colors"
         >
           <Phone className="h-4 w-4" />
           Call to Book
         </a>
 
-        <button onClick={() => setOpen(!open)} className="md:hidden text-gold">
+        <button onClick={() => setOpen(!open)} className="lg:hidden text-gold">
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
 
       {open && (
-        <div className="md:hidden bg-purple-deep border-t border-purple-mid/30 px-6 py-4 flex flex-col gap-4">
+        <div className="lg:hidden bg-purple-deep border-t border-purple-mid/30 px-6 py-4 flex flex-col gap-4">
           {[
             ["Services", "services"],
             ["Testimonials", "testimonials"],
