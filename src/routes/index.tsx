@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Star, MapPin, Phone, Clock, ArrowRight } from "lucide-react";
-import heroBg from "@/assets/hero-bg.png";
+const heroBg = "/images/hero-bg.png";
 import thaiPattern from "@/assets/thai-pattern.jpg";
 
 
