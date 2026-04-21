@@ -37,9 +37,9 @@ const services = [
 ];
 
 const reviews = [
-  { name: "Conor Kirwan", rating: 5, time: "a month ago", text: "Unbelievable service. My back has been in bad shape for a while and I already feel the difference afterwards! Highly recommend." },
-  { name: "John Delaney", rating: 5, time: "11 months ago", text: "I'm going to Kay Thai Massage a long time now, and wouldn't change. They are so professional and go out of their way to fit an appointment for you. It's so relaxing and therapeutic — always leave feeling amazing." },
-  { name: "Dea Fusco", rating: 5, time: "2 years ago", text: "Had a massage here 3 times now. Last time was the best! My lower back was really painful and having difficulty to walk. The masseuse was very professional and knew exactly where the problem was. Highly recommend!" },
+  { name: "Conor K", rating: 5, time: "a month ago", text: "Unbelievable service. My back has been in bad shape for a while and I already feel the difference afterwards! Highly recommend." },
+  { name: "John D", rating: 5, time: "11 months ago", text: "I'm going to Kay Thai Massage a long time now, and wouldn't change. They are so professional and go out of their way to fit an appointment for you. It's so relaxing and therapeutic — always leave feeling amazing." },
+  { name: "Dea F", rating: 5, time: "2 years ago", text: "Had a massage here 3 times now. Last time was the best! My lower back was really painful and having difficulty to walk. The masseuse was very professional and knew exactly where the problem was. Highly recommend!" },
 ];
 
 function GoldDivider() {
