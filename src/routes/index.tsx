@@ -66,10 +66,10 @@ function HomePage() {
       <section id="hero" className="relative min-h-[100svh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img src={kayHeroBg} alt="Kay Thai Massage" width={1080} height={1920} className="h-full w-full object-cover object-top" style={{ filter: 'contrast(1.12) brightness(1.04) saturate(1.15)', imageRendering: 'auto', WebkitBackfaceVisibility: 'hidden' }} />
-          <div className="absolute inset-0 bg-gradient-to-t from-purple-deep via-purple-deep/60 to-purple-deep/20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-purple-deep via-purple-deep/80 to-purple-deep/50 md:from-purple-deep md:via-purple-deep/60 md:to-purple-deep/20" />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 py-20 text-center w-full">
+        <div className="relative z-10 mx-auto max-w-4xl px-6 sm:px-8 py-24 text-center w-full">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
