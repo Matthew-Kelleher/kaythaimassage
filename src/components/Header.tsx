@@ -1,4 +1,3 @@
-import { Link } from "@tanstack/react-router";
 import { Phone, Menu, X } from "lucide-react";
 import { useState } from "react";
 import lotusIcon from "@/assets/lotus-icon.png";
@@ -6,41 +5,74 @@ import lotusIcon from "@/assets/lotus-icon.png";
 export default function Header() {
   const [open, setOpen] = useState(false);
 
+  const scrollTo = (id: string) => {
+    setOpen(false);
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-purple-deep/95 backdrop-blur-md border-b border-purple-mid/30">
       <div className="mx-auto max-w-7xl flex items-center justify-between px-6 py-3">
-        <Link to="/" className="flex items-center gap-2">
-          <img src={lotusIcon} alt="Kay Thai Massage" width={40} height={40} />
-          <span className="font-display text-xl font-semibold text-foreground tracking-tight">
+        <a href="#hero" onClick={() => scrollTo("hero")} className="flex items-center gap-2">
+          <img src={lotusIcon} alt="Kay Thai Massage" width={36} height={36} />
+          <span className="font-display text-lg font-semibold text-gold tracking-tight">
             Kay Thai Massage
           </span>
-        </Link>
-
-        <nav className="hidden md:flex items-center gap-8">
-          <Link to="/" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors" activeProps={{ className: "text-sm font-medium text-primary" }}>Home</Link>
-          <Link to="/services" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors" activeProps={{ className: "text-sm font-medium text-primary" }}>Services</Link>
-          <Link to="/reviews" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors" activeProps={{ className: "text-sm font-medium text-primary" }}>Reviews</Link>
-          <Link to="/contact" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors" activeProps={{ className: "text-sm font-medium text-primary" }}>Contact</Link>
-        </nav>
-
-        <a href="tel:0857496528" className="hidden md:inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-gold-dark transition-colors">
-          <Phone className="h-4 w-4" />
-          Book Now
         </a>
 
-        <button onClick={() => setOpen(!open)} className="md:hidden text-foreground">
+        <nav className="hidden md:flex items-center gap-8">
+          {[
+            ["About", "about"],
+            ["Approach", "approach"],
+            ["Services", "services"],
+            ["Testimonials", "testimonials"],
+            ["Contact", "contact"],
+          ].map(([label, id]) => (
+            <button
+              key={id}
+              onClick={() => scrollTo(id)}
+              className="text-xs font-medium tracking-widest uppercase text-gold-light/70 hover:text-gold transition-colors"
+            >
+              {label}
+            </button>
+          ))}
+        </nav>
+
+        <a
+          href="tel:0857496528"
+          className="hidden md:inline-flex items-center gap-2 rounded-sm bg-gold px-5 py-2 text-xs font-semibold tracking-wider uppercase text-purple-deep hover:bg-gold-light transition-colors"
+        >
+          <Phone className="h-3.5 w-3.5" />
+          Call to Book
+        </a>
+
+        <button onClick={() => setOpen(!open)} className="md:hidden text-gold">
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
 
       {open && (
-        <div className="md:hidden border-t border-border bg-background px-6 py-4 flex flex-col gap-4">
-          <Link to="/" onClick={() => setOpen(false)} className="text-sm font-medium text-foreground">Home</Link>
-          <Link to="/services" onClick={() => setOpen(false)} className="text-sm font-medium text-foreground">Services</Link>
-          <Link to="/reviews" onClick={() => setOpen(false)} className="text-sm font-medium text-foreground">Reviews</Link>
-          <Link to="/contact" onClick={() => setOpen(false)} className="text-sm font-medium text-foreground">Contact</Link>
-          <a href="tel:0857496528" className="inline-flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground">
-            <Phone className="h-4 w-4" /> Call to Book
+        <div className="md:hidden bg-purple-deep border-t border-purple-mid/30 px-6 py-4 flex flex-col gap-4">
+          {[
+            ["About", "about"],
+            ["Approach", "approach"],
+            ["Services", "services"],
+            ["Testimonials", "testimonials"],
+            ["Contact", "contact"],
+          ].map(([label, id]) => (
+            <button
+              key={id}
+              onClick={() => scrollTo(id)}
+              className="text-sm font-medium text-gold-light/80 text-left hover:text-gold"
+            >
+              {label}
+            </button>
+          ))}
+          <a
+            href="tel:0857496528"
+            className="inline-flex items-center justify-center gap-2 bg-gold px-5 py-2.5 text-xs font-semibold uppercase text-purple-deep"
+          >
+            <Phone className="h-3.5 w-3.5" /> Call to Book
           </a>
         </div>
       )}
