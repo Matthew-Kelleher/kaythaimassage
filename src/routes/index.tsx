@@ -79,7 +79,7 @@ function HomePage() {
               Authentic Thai Massage in Kilkenny
             </p>
 
-            <h1 className="font-display text-4xl sm:text-5xl md:text-7xl font-bold text-gold leading-tight tracking-tight">
+            <h1 className="font-display text-5xl sm:text-6xl md:text-8xl font-bold text-gold leading-tight tracking-tight">
               Kay Thai Massage
             </h1>
 
