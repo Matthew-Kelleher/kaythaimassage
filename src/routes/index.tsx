@@ -25,12 +25,14 @@ const fadeIn = {
 };
 
 const services = [
-  { name: "Traditional Thai Massage", duration: "60 min", price: "€65", desc: "Ancient Thai techniques combining acupressure, stretching, and energy line work to relieve tension and improve flexibility." },
-  { name: "Aromatherapy Oil Massage", duration: "60 min", price: "€65", desc: "Soothing massage with essential oils to promote relaxation, reduce stress, and alleviate pain by stimulating the senses." },
-  { name: "Deep Tissue Massage", duration: "60 min", price: "€65", desc: "Firm pressure targeting deep muscle layers to release chronic tension, knots, and adhesions for lasting pain relief." },
-  { name: "Hot Stone Massage", duration: "60 min", price: "€75", desc: "Smooth heated stones placed on key points and used as massage tools to melt away tension and promote circulation." },
-  { name: "Hot Oil Massage", duration: "60 min", price: "€65", desc: "Long strokes and gentle kneading with natural oils to ease tension while providing a deeply relaxing experience." },
-  { name: "Neck, Back & Shoulder", duration: "30 min", price: "€35", desc: "Focused treatment for the upper body's most common tension areas, ideal for desk workers and those with postural strain." },
+  { name: "Thai Traditional Massage", duration: "1 Hour", price: "€60", desc: "Ancient Thai techniques combining acupressure, stretching, and energy line work to relieve tension and improve flexibility." },
+  { name: "Back, Shoulder & Neck Massage", duration: "1/2 Hour", price: "€35", desc: "Focused treatment for the upper body's most common tension areas, ideal for desk workers and those with postural strain." },
+  { name: "Aromatherapy Massage", duration: "1 Hour", price: "€60", desc: "Soothing massage with essential oils to promote relaxation, reduce stress, and alleviate pain by stimulating the senses." },
+  { name: "Sports Massage", duration: "1 Hour", price: "€60", desc: "Targeted deep tissue work designed for active individuals to prevent injury, reduce recovery time, and improve performance." },
+  { name: "Cupping Treatment Massage", duration: "1 Hour", price: "€60", desc: "Traditional cupping therapy combined with massage to increase blood flow, reduce inflammation, and release deep muscle tension." },
+  { name: "Foot Massage", duration: "1/2 Hour", price: "€35", desc: "Reflexology-inspired foot massage targeting pressure points to relieve tension, improve circulation, and promote overall wellbeing." },
+  { name: "Hot Oil Relax Massage", duration: "1 Hour", price: "€60", desc: "Long strokes and gentle kneading with warm natural oils to ease tension while providing a deeply relaxing experience." },
+  { name: "Hot Stone Massage", duration: "1 Hour", price: "€60", desc: "Smooth heated stones placed on key points and used as massage tools to melt away tension and promote circulation." },
 ];
 
 const reviews = [
