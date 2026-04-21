@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { Star, MapPin, Phone, Clock, ArrowRight } from "lucide-react";
-import kayHeroBg from "@/assets/kay-hero-bg.jpg";
+
 import thaiPattern from "@/assets/thai-pattern.jpg";
 
 
