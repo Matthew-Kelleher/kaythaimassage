@@ -116,6 +116,7 @@ function DurationFilter() {
 }
 
 
+function HomePage() {
   return (
     <div>
       {/* Hero */}
