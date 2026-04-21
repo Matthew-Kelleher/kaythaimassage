@@ -57,7 +57,7 @@ export default function Header() {
       </div>
 
       {open && (
-        <div className="md:hidden bg-purple-deep border-t border-purple-mid/30 px-6 py-4 flex flex-col gap-4">
+        <div className="lg:hidden bg-purple-deep border-t border-purple-mid/30 px-6 py-4 flex flex-col gap-4">
           {[
             ["Services", "services"],
             ["Testimonials", "testimonials"],
