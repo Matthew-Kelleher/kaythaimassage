@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Star, MapPin, Phone, Clock, ArrowRight } from "lucide-react";
-import kayHeroBg from "@/assets/kay-hero-bg.jpg";
+import heroBg from "@/assets/hero-bg.png";
 import thaiPattern from "@/assets/thai-pattern.jpg";
 
 
@@ -65,7 +65,7 @@ function HomePage() {
       {/* Hero */}
       <section id="hero" className="relative min-h-[100svh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={kayHeroBg} alt="Kay Thai Massage" width={1080} height={1920} className="h-full w-full object-cover object-top" style={{ filter: 'contrast(1.12) brightness(1.04) saturate(1.15)', imageRendering: 'auto', WebkitBackfaceVisibility: 'hidden' }} />
+          <img src={heroBg} alt="Kay Thai Massage" width={1080} height={1920} className="h-full w-full object-cover object-top" style={{ filter: 'contrast(1.08) brightness(0.95) saturate(1.1)', imageRendering: 'auto', WebkitBackfaceVisibility: 'hidden' }} />
           <div className="absolute inset-0 bg-gradient-to-t from-purple-deep via-purple-deep/80 to-purple-deep/50 md:from-purple-deep md:via-purple-deep/60 md:to-purple-deep/20" />
         </div>
 
