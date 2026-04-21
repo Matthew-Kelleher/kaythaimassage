@@ -65,21 +65,21 @@ function HomePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            <p className="text-xs tracking-[0.3em] uppercase text-gold-light/70 mb-6">
+            <p className="text-sm md:text-base tracking-[0.3em] uppercase text-gold-light/70 mb-6">
               Authentic Thai Massage in Kilkenny
             </p>
 
-            <h1 className="font-display text-5xl md:text-7xl font-bold text-gold leading-tight tracking-tight">
+            <h1 className="font-display text-6xl md:text-8xl font-bold text-gold leading-tight tracking-tight">
               Kay Thai Massage
             </h1>
 
             <GoldDivider />
 
-            <p className="font-script text-2xl md:text-3xl text-gold-light/80 mt-4 italic">
+            <p className="font-script text-3xl md:text-4xl text-gold-light/80 mt-4 italic">
               Original Thai Massage
             </p>
 
-            <p className="mt-6 text-base text-gold-light/60 max-w-lg mx-auto leading-relaxed">
+            <p className="mt-6 text-lg md:text-xl text-gold-light/60 max-w-lg mx-auto leading-relaxed">
               Revitalise your body, rejuvenate your soul in a tranquil setting
             </p>
 
@@ -115,40 +115,6 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Approach */}
-      <section
-        id="approach"
-        className="py-24 relative overflow-hidden"
-      >
-        <div className="absolute inset-0 bg-purple-deep" />
-        <div
-          className="absolute inset-0 opacity-10"
-          style={{ backgroundImage: `url(${thaiPattern})`, backgroundSize: "250px" }}
-        />
-        <div className="relative z-10 mx-auto max-w-6xl px-6">
-          <motion.div {...fadeIn} className="text-center mb-16">
-            <p className="text-xs tracking-[0.25em] uppercase text-gold/60 mb-3">How We Work</p>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-gold">Our Approach</h2>
-            <GoldDivider />
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-12">
-            <motion.div {...fadeIn} className="bg-purple-mid/30 border border-gold/10 rounded-lg p-8">
-              <h3 className="font-display text-xl font-semibold text-gold mb-4">Our Mission</h3>
-              <p className="text-gold-light/60 text-sm leading-relaxed">
-                To provide a high-quality, professional Thai massage experience in a tranquil setting. We focus on delivering personalised care through expert therapists, ensuring relaxation and well-being for every client who walks through our doors.
-              </p>
-            </motion.div>
-
-            <motion.div {...fadeIn} transition={{ duration: 0.7, delay: 0.15 }} className="bg-purple-mid/30 border border-gold/10 rounded-lg p-8">
-              <h3 className="font-display text-xl font-semibold text-gold mb-4">Our Vision</h3>
-              <p className="text-gold-light/60 text-sm leading-relaxed">
-                To be a leading Thai massage centre in Kilkenny, offering exceptional, professional service in a serene environment. We aim to create a sanctuary where every guest experiences deep relaxation, rejuvenation, and holistic healing.
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
 
       {/* Services */}
       <section id="services" className="py-24 bg-cream">
