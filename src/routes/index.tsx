@@ -25,14 +25,14 @@ const fadeIn = {
 };
 
 const services = [
-  { name: "Thai Traditional Massage", duration: "1 Hour", price: "€60", desc: "Ancient Thai techniques combining acupressure, stretching, and energy line work to relieve tension and improve flexibility." },
-  { name: "Back, Shoulder & Neck Massage", duration: "1/2 Hour", price: "€35", desc: "Focused treatment for the upper body's most common tension areas, ideal for desk workers and those with postural strain." },
-  { name: "Aromatherapy Massage", duration: "1 Hour", price: "€60", desc: "Soothing massage with essential oils to promote relaxation, reduce stress, and alleviate pain by stimulating the senses." },
-  { name: "Sports Massage", duration: "1 Hour", price: "€60", desc: "Targeted deep tissue work designed for active individuals to prevent injury, reduce recovery time, and improve performance." },
-  { name: "Cupping Treatment Massage", duration: "1 Hour", price: "€60", desc: "Traditional cupping therapy combined with massage to increase blood flow, reduce inflammation, and release deep muscle tension." },
-  { name: "Foot Massage", duration: "1/2 Hour", price: "€35", desc: "Reflexology-inspired foot massage targeting pressure points to relieve tension, improve circulation, and promote overall wellbeing." },
-  { name: "Hot Oil Relax Massage", duration: "1 Hour", price: "€60", desc: "Long strokes and gentle kneading with warm natural oils to ease tension while providing a deeply relaxing experience." },
-  { name: "Hot Stone Massage", duration: "1 Hour", price: "€60", desc: "Smooth heated stones placed on key points and used as massage tools to melt away tension and promote circulation." },
+  { name: "Thai Traditional Massage", pricing: [{ duration: "1 Hour", price: "€60" }, { duration: "90 Mins", price: "€90" }, { duration: "2 Hours", price: "€120" }], desc: "Ancient Thai techniques combining acupressure, stretching, and energy line work to relieve tension and improve flexibility." },
+  { name: "Back, Shoulder & Neck Massage", pricing: [{ duration: "1/2 Hour", price: "€35" }], desc: "Focused treatment for the upper body's most common tension areas, ideal for desk workers and those with postural strain." },
+  { name: "Aromatherapy Massage", pricing: [{ duration: "1 Hour", price: "€60" }], desc: "Soothing massage with essential oils to promote relaxation, reduce stress, and alleviate pain by stimulating the senses." },
+  { name: "Sports Massage", pricing: [{ duration: "1 Hour", price: "€60" }, { duration: "90 Mins", price: "€90" }, { duration: "2 Hours", price: "€120" }], desc: "Targeted deep tissue work designed for active individuals to prevent injury, reduce recovery time, and improve performance." },
+  { name: "Cupping Treatment Massage", pricing: [{ duration: "1 Hour", price: "€60" }], desc: "Traditional cupping therapy combined with massage to increase blood flow, reduce inflammation, and release deep muscle tension." },
+  { name: "Foot Massage", pricing: [{ duration: "1/2 Hour", price: "€35" }], desc: "Reflexology-inspired foot massage targeting pressure points to relieve tension, improve circulation, and promote overall wellbeing." },
+  { name: "Hot Oil Relax Massage", pricing: [{ duration: "1 Hour", price: "€60" }, { duration: "90 Mins", price: "€90" }, { duration: "2 Hours", price: "€120" }], desc: "Long strokes and gentle kneading with warm natural oils to ease tension while providing a deeply relaxing experience." },
+  { name: "Hot Stone Massage", pricing: [{ duration: "1 Hour", price: "€60" }], desc: "Smooth heated stones placed on key points and used as massage tools to melt away tension and promote circulation." },
 ];
 
 const reviews = [
@@ -126,10 +126,13 @@ function HomePage() {
               >
                 <div className="flex items-start justify-between mb-3">
                   <h3 className="font-display text-lg font-semibold text-purple-deep group-hover:text-purple-mid transition-colors">{s.name}</h3>
-                  <span className="text-sm font-bold text-gold-dark whitespace-nowrap ml-3">{s.price}</span>
                 </div>
-                <div className="flex items-center gap-1 text-xs text-muted-foreground mb-3">
-                  <Clock className="h-3 w-3" /> {s.duration}
+                <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground mb-3">
+                  {s.pricing.map((p) => (
+                    <span key={p.duration} className="inline-flex items-center gap-1">
+                      <Clock className="h-3 w-3" /> {p.duration} — <span className="font-bold text-gold-dark">{p.price}</span>
+                    </span>
+                  ))}
                 </div>
                 <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
               </motion.div>
