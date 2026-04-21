@@ -161,7 +161,7 @@ function HomePage() {
             <GoldDivider />
           </motion.div>
 
-          <div className="space-y-6">
+          <div className="grid md:grid-cols-3 gap-6">
             {reviews.map((r, i) => (
               <motion.div
                 key={r.name}
@@ -169,18 +169,20 @@ function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.12 }}
-                className="bg-purple-mid/20 border border-gold/10 rounded-lg p-8"
+                className="bg-purple-mid/15 backdrop-blur-sm border border-gold/10 rounded-xl p-7 flex flex-col justify-between"
               >
-                <div className="flex gap-0.5 mb-4">
-                  {[...Array(r.rating)].map((_, j) => (
-                    <Star key={j} className="h-4 w-4 fill-gold text-gold" />
-                  ))}
+                <div>
+                  <div className="flex gap-0.5 mb-5">
+                    {[...Array(r.rating)].map((_, j) => (
+                      <Star key={j} className="h-3.5 w-3.5 fill-gold text-gold" />
+                    ))}
+                  </div>
+                  <blockquote className="text-gold-light/70 text-sm leading-relaxed mb-6">
+                    "{r.text}"
+                  </blockquote>
                 </div>
-                <blockquote className="text-gold-light/70 text-sm leading-relaxed italic mb-4">
-                  "{r.text}"
-                </blockquote>
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-gold/15 flex items-center justify-center font-display text-sm font-semibold text-gold">
+                <div className="flex items-center gap-3 pt-5 border-t border-gold/10">
+                  <div className="w-9 h-9 rounded-full bg-gold/10 flex items-center justify-center font-display text-sm font-semibold text-gold">
                     {r.name.charAt(0)}
                   </div>
                   <div>
