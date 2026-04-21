@@ -13,7 +13,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-purple-deep/95 backdrop-blur-md border-b border-purple-mid/30">
       <div className="mx-auto max-w-7xl flex items-center justify-between px-6 py-4">
-        <a href="#hero" onClick={() => scrollTo("hero")} className="flex items-center gap-3">
+        <a href="#hero" onClick={() => scrollTo("hero")} className="flex items-center gap-1.5">
           <img src={logoIcon} alt="Kay Thai Massage" width={72} height={72} className="h-[72px] w-auto" />
           <span className="font-display text-xl font-semibold text-gold tracking-tight">
             Kay Thai Massage
