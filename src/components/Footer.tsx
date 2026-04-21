@@ -70,6 +70,7 @@ export default function Footer() {
           </p>
           <p className="text-[10px] text-gold-light/20 mt-2">
             Created by <a href="https://kelleherwebdesign.com" target="_blank" rel="noopener noreferrer" className="hover:text-gold-light/40 transition-colors underline">KelleherWebDesign</a>
+          </p>
         </div>
       </div>
     </footer>
