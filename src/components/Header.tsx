@@ -12,15 +12,15 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-purple-deep/95 backdrop-blur-md border-b border-purple-mid/30">
-      <div className="mx-auto max-w-7xl flex items-center justify-between px-6 py-3">
-        <a href="#hero" onClick={() => scrollTo("hero")} className="flex items-center gap-2">
-          <img src={lotusIcon} alt="Kay Thai Massage" width={36} height={36} />
-          <span className="font-display text-lg font-semibold text-gold tracking-tight">
+      <div className="mx-auto max-w-7xl flex items-center justify-between px-6 py-4">
+        <a href="#hero" onClick={() => scrollTo("hero")} className="flex items-center gap-3">
+          <img src={lotusIcon} alt="Kay Thai Massage" width={44} height={44} />
+          <span className="font-display text-xl font-semibold text-gold tracking-tight">
             Kay Thai Massage
           </span>
         </a>
 
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-10">
           {[
             ["Approach", "approach"],
             ["Services", "services"],
@@ -30,7 +30,7 @@ export default function Header() {
             <button
               key={id}
               onClick={() => scrollTo(id)}
-              className="text-xs font-medium tracking-widest uppercase text-gold-light/70 hover:text-gold transition-colors"
+              className="text-sm font-medium tracking-widest uppercase text-gold-light/70 hover:text-gold transition-colors"
             >
               {label}
             </button>
@@ -39,9 +39,9 @@ export default function Header() {
 
         <a
           href="tel:0857496528"
-          className="hidden md:inline-flex items-center gap-2 rounded-sm bg-gold px-5 py-2 text-xs font-semibold tracking-wider uppercase text-purple-deep hover:bg-gold-light transition-colors"
+          className="hidden md:inline-flex items-center gap-2 rounded-sm bg-gold px-6 py-2.5 text-sm font-semibold tracking-wider uppercase text-purple-deep hover:bg-gold-light transition-colors"
         >
-          <Phone className="h-3.5 w-3.5" />
+          <Phone className="h-4 w-4" />
           Call to Book
         </a>
 
