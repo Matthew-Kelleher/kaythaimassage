@@ -68,6 +68,8 @@ export default function Footer() {
           <p className="text-xs text-gold-light/30">
             © {new Date().getFullYear()} Kay Thai Massage Kilkenny. All rights reserved.
           </p>
+          <p className="text-[10px] text-gold-light/20 mt-2">
+            Created by <a href="https://kelleherwebdesign.com" target="_blank" rel="noopener noreferrer" className="hover:text-gold-light/40 transition-colors underline">KelleherWebDesign</a>
         </div>
       </div>
     </footer>
