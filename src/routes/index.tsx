@@ -109,36 +109,13 @@ function HomePage() {
       {/* Services */}
       <section id="services" className="py-24 bg-cream">
         <div className="mx-auto max-w-6xl px-6">
-          <motion.div {...fadeIn} className="text-center mb-16">
+          <motion.div {...fadeIn} className="text-center mb-10">
             <p className="text-xs tracking-[0.25em] uppercase text-gold-dark mb-3">What We Offer</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-purple-deep">Our Services</h2>
             <GoldDivider />
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {services.map((s, i) => (
-              <motion.div
-                key={s.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="bg-card rounded-lg p-7 border border-border hover:shadow-lg transition-all duration-300 group"
-              >
-                <div className="flex items-start justify-between mb-3">
-                  <h3 className="font-display text-lg font-semibold text-purple-deep group-hover:text-purple-mid transition-colors">{s.name}</h3>
-                </div>
-                <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground mb-3">
-                  {s.pricing.map((p) => (
-                    <span key={p.duration} className="inline-flex items-center gap-1">
-                      <Clock className="h-3 w-3" /> {p.duration} — <span className="font-bold text-gold-dark">{p.price}</span>
-                    </span>
-                  ))}
-                </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
-              </motion.div>
-            ))}
-          </div>
+          <DurationFilter />
         </div>
       </section>
 
