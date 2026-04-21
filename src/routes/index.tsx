@@ -114,7 +114,7 @@ function HomePage() {
 
 
       {/* Services */}
-      <section id="services" className="py-24 bg-cream">
+      <section id="services" className="py-24 bg-cream scroll-mt-16">
         <div className="mx-auto max-w-6xl px-6">
           <motion.div {...fadeIn} className="text-center mb-10">
             <p className="text-xs tracking-[0.25em] uppercase text-gold-dark mb-3">What We Offer</p>
@@ -177,7 +177,7 @@ function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section id="testimonials" className="py-24 relative overflow-hidden">
+      <section id="testimonials" className="py-24 relative overflow-hidden scroll-mt-16">
         <div className="absolute inset-0 bg-purple-deep" />
         <div
           className="absolute inset-0 opacity-8"
@@ -226,7 +226,7 @@ function HomePage() {
       </section>
 
       {/* Contact */}
-      <section id="contact" className="py-24 bg-cream">
+      <section id="contact" className="py-24 bg-cream scroll-mt-16">
         <div className="mx-auto max-w-6xl px-6">
           <motion.div {...fadeIn} className="text-center mb-16">
             <p className="text-xs tracking-[0.25em] uppercase text-gold-dark mb-3">Get In Touch</p>
