@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { Star, MapPin, Phone, Clock, ArrowRight } from "lucide-react";
-import heroSpa from "@/assets/hero-spa.jpg";
+import kayHeroBg from "@/assets/kay-hero-bg.jpg";
 import thaiPattern from "@/assets/thai-pattern.jpg";
 
 
@@ -53,17 +53,13 @@ function HomePage() {
   return (
     <div>
       {/* Hero */}
-      <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section id="hero" className="relative min-h-screen flex items-end justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={heroSpa} alt="Kay Thai Massage spa" width={1920} height={1080} className="h-full w-full object-cover" />
-          <div className="absolute inset-0 bg-purple-deep/70" />
-          <div
-            className="absolute inset-0 opacity-15 mix-blend-overlay"
-            style={{ backgroundImage: `url(${thaiPattern})`, backgroundSize: "300px" }}
-          />
+          <img src={kayHeroBg} alt="Kay Thai Massage" width={1080} height={1920} className="h-full w-full object-cover object-top" />
+          <div className="absolute inset-0 bg-gradient-to-t from-purple-deep via-purple-deep/40 to-transparent" />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-4xl px-6 py-32 text-center w-full">
+        <div className="relative z-10 mx-auto max-w-4xl px-6 pb-20 pt-[60vh] text-center w-full">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
