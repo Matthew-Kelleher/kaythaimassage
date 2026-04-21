@@ -51,8 +51,71 @@ function GoldDivider() {
     </div>
   );
 }
+const durations = ["All", "1/2 Hour", "1 Hour", "90 Mins", "2 Hours"] as const;
 
-function HomePage() {
+function DurationFilter() {
+  const [active, setActive] = useState<string>("All");
+
+  const filtered = active === "All"
+    ? services
+    : services.filter((s) => s.pricing.some((p) => p.duration === active));
+
+  return (
+    <>
+      <div className="flex flex-wrap justify-center gap-2 mb-10">
+        {durations.map((d) => (
+          <button
+            key={d}
+            onClick={() => setActive(d)}
+            className={`px-5 py-2 text-xs font-semibold tracking-wider uppercase rounded-sm border transition-all duration-200 ${
+              active === d
+                ? "bg-purple-deep text-gold border-purple-deep shadow-md"
+                : "bg-transparent text-purple-deep border-purple-mid/30 hover:border-purple-deep/50 hover:bg-purple-deep/5"
+            }`}
+          >
+            {d}
+          </button>
+        ))}
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <AnimatePresence mode="popLayout">
+          {filtered.map((s, i) => {
+            const visiblePricing = active === "All"
+              ? s.pricing
+              : s.pricing.filter((p) => p.duration === active);
+
+            return (
+              <motion.div
+                key={s.name}
+                layout
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.3, delay: i * 0.05 }}
+                className="bg-card rounded-lg p-7 border border-border hover:shadow-lg transition-all duration-300 group"
+              >
+                <div className="flex items-start justify-between mb-3">
+                  <h3 className="font-display text-lg font-semibold text-purple-deep group-hover:text-purple-mid transition-colors">{s.name}</h3>
+                </div>
+                <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground mb-3">
+                  {visiblePricing.map((p) => (
+                    <span key={p.duration} className="inline-flex items-center gap-1">
+                      <Clock className="h-3 w-3" /> {p.duration} — <span className="font-bold text-gold-dark">{p.price}</span>
+                    </span>
+                  ))}
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+              </motion.div>
+            );
+          })}
+        </AnimatePresence>
+      </div>
+    </>
+  );
+}
+
+
   return (
     <div>
       {/* Hero */}
