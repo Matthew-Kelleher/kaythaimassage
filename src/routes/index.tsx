@@ -177,7 +177,7 @@ function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section id="testimonials" className="py-24 relative overflow-hidden scroll-mt-16">
+      <section id="testimonials" className="py-24 relative overflow-hidden scroll-mt-20">
         <div className="absolute inset-0 bg-purple-deep" />
         <div
           className="absolute inset-0 opacity-8"
