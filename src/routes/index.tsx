@@ -53,19 +53,37 @@ function HomePage() {
   return (
     <div>
       {/* Hero */}
-      <section id="hero" className="relative min-h-[120vh] md:min-h-screen flex items-end justify-center overflow-hidden">
+      <section id="hero" className="relative min-h-screen flex items-end justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={kayHeroBg} alt="Kay Thai Massage" width={1080} height={1920} className="h-full w-full object-cover object-[center_15%]" />
-          <div className="absolute inset-0 bg-gradient-to-t from-purple-deep via-purple-deep/60 via-30% to-transparent" />
+          <img src={kayHeroBg} alt="Kay Thai Massage" width={1080} height={1920} className="h-full w-full object-cover object-top" />
+          <div className="absolute inset-0 bg-gradient-to-t from-purple-deep via-purple-deep/40 to-transparent" />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-4xl px-6 pb-24 pt-[65vh] text-center w-full">
+        <div className="relative z-10 mx-auto max-w-4xl px-6 pb-20 pt-[60vh] text-center w-full">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+            <p className="text-sm md:text-base tracking-[0.3em] uppercase text-gold-light/70 mb-6">
+              Authentic Thai Massage in Kilkenny
+            </p>
+
+            <h1 className="font-display text-6xl md:text-8xl font-bold text-gold leading-tight tracking-tight">
+              Kay Thai Massage
+            </h1>
+
+            <GoldDivider />
+
+            <p className="font-script text-3xl md:text-4xl text-gold-light/80 mt-4 italic">
+              Original Thai Massage
+            </p>
+
+            <p className="mt-6 text-lg md:text-xl text-gold-light/60 max-w-lg mx-auto leading-relaxed">
+              Revitalise your body, rejuvenate your soul in a tranquil setting
+            </p>
+
+            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="tel:0857496528"
                 className="inline-flex items-center justify-center gap-2 bg-gold px-8 py-3.5 text-sm font-semibold tracking-wider uppercase text-purple-deep hover:bg-gold-light transition-colors"
@@ -81,7 +99,7 @@ function HomePage() {
               </button>
             </div>
 
-            <div className="flex items-center justify-center gap-1 mt-8">
+            <div className="flex items-center justify-center gap-1 mt-10">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="h-4 w-4 fill-gold text-gold" />
               ))}
