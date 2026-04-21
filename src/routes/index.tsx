@@ -266,7 +266,7 @@ function HomePage() {
               className="rounded-lg overflow-hidden border border-border h-[400px] md:h-auto"
             >
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2387.5!2d-7.254!3d52.654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTLCsDM5JzE0LjQiTiA3wrAxNScxNC40Ilc!5e0!3m2!1sen!2sie!4v1"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1193.5!2d-7.2557!3d52.6565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x484355a4a98fa5e3%3A0x62e1a12b2f3a8e0c!2s58%20John%20Street%20Upper%2C%20Gardens%2C%20Kilkenny%2C%20R95%20K75T!5e0!3m2!1sen!2sie!4v1"
                 width="100%"
                 height="100%"
                 style={{ border: 0, minHeight: "400px" }}
