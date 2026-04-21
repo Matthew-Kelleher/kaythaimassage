@@ -53,40 +53,39 @@ function HomePage() {
   return (
     <div>
       {/* Hero */}
-      <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section id="hero" className="relative min-h-[120vh] md:min-h-screen flex items-end justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={kayHeroBg} alt="Kay Thai Massage" width={1080} height={1920} className="h-full w-full object-cover object-[center_20%]" />
-          <div className="absolute inset-0 bg-gradient-to-t from-purple-deep via-purple-deep/50 via-25% to-transparent" />
+          <img src={kayHeroBg} alt="Kay Thai Massage" width={1080} height={1920} className="h-full w-full object-cover object-[center_15%]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-purple-deep via-purple-deep/60 via-30% to-transparent" />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-4xl px-6 pt-[55vh] pb-28 text-center w-full flex flex-col items-center">
+        <div className="relative z-10 mx-auto max-w-4xl px-6 pb-24 pt-[65vh] text-center w-full">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="flex flex-col items-center"
           >
-            <div className="mt-8 flex flex-col sm:flex-row gap-5 justify-center">
+            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="tel:0857496528"
-                className="inline-flex items-center justify-center gap-3 bg-gold px-10 py-4 text-base md:text-lg font-semibold tracking-wider uppercase text-purple-deep hover:bg-gold-light transition-colors rounded"
+                className="inline-flex items-center justify-center gap-2 bg-gold px-8 py-3.5 text-sm font-semibold tracking-wider uppercase text-purple-deep hover:bg-gold-light transition-colors"
               >
-                <Phone className="h-5 w-5" />
+                <Phone className="h-4 w-4" />
                 Book Now: 085 749 6528
               </a>
               <button
                 onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })}
-                className="inline-flex items-center justify-center gap-3 border-2 border-gold/40 px-10 py-4 text-base md:text-lg font-medium tracking-wider uppercase text-gold-light/90 hover:bg-gold/10 transition-colors rounded"
+                className="inline-flex items-center justify-center gap-2 border border-gold/30 px-8 py-3.5 text-sm font-medium tracking-wider uppercase text-gold-light/80 hover:bg-gold/10 transition-colors"
               >
                 View Services
               </button>
             </div>
 
-            <div className="flex items-center justify-center gap-1.5 mt-10">
+            <div className="flex items-center justify-center gap-1 mt-8">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-5 w-5 fill-gold text-gold" />
+                <Star key={i} className="h-4 w-4 fill-gold text-gold" />
               ))}
-              <span className="ml-3 text-base md:text-lg text-gold-light/70 font-medium">4.8/5 · 46 reviews</span>
+              <span className="ml-2 text-sm text-gold-light/60">4.8/5 · 46 reviews</span>
             </div>
           </motion.div>
         </div>
