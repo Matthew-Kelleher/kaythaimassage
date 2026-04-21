@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Star, MapPin, Phone, Clock, ArrowRight } from "lucide-react";
 import heroSpa from "@/assets/hero-spa.jpg";
 import thaiPattern from "@/assets/thai-pattern.jpg";
-import kayBrochure from "@/assets/kay-brochure.jpg";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
