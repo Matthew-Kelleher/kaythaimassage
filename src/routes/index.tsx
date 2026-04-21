@@ -63,13 +63,13 @@ function HomePage() {
   return (
     <div>
       {/* Hero */}
-      <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section id="hero" className="relative min-h-[100svh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={kayHeroBg} alt="Kay Thai Massage" width={1080} height={1920} className="h-full w-full object-cover object-top" style={{ filter: 'contrast(1.12) brightness(1.04) saturate(1.15) sharpen(1)', imageRendering: 'auto', WebkitBackfaceVisibility: 'hidden' }} />
+          <img src={kayHeroBg} alt="Kay Thai Massage" width={1080} height={1920} className="h-full w-full object-cover object-top" style={{ filter: 'contrast(1.12) brightness(1.04) saturate(1.15)', imageRendering: 'auto', WebkitBackfaceVisibility: 'hidden' }} />
           <div className="absolute inset-0 bg-gradient-to-t from-purple-deep via-purple-deep/60 to-purple-deep/20" />
         </div>
 
-        <div className="relative z-10 mx-auto max-w-4xl px-6 py-20 text-center w-full">
+        <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 py-20 text-center w-full">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -79,17 +79,17 @@ function HomePage() {
               Authentic Thai Massage in Kilkenny
             </p>
 
-            <h1 className="font-display text-5xl md:text-7xl font-bold text-gold leading-tight tracking-tight">
+            <h1 className="font-display text-4xl sm:text-5xl md:text-7xl font-bold text-gold leading-tight tracking-tight">
               Kay Thai Massage
             </h1>
 
             <GoldDivider />
 
-            <p className="font-script text-2xl md:text-3xl text-gold-light/80 mt-4 italic">
+            <p className="font-script text-xl sm:text-2xl md:text-3xl text-gold-light/80 mt-4 italic">
               Original Thai Massage
             </p>
 
-            <p className="mt-6 text-base text-gold-light/60 max-w-lg mx-auto leading-relaxed">
+            <p className="mt-6 text-sm sm:text-base text-gold-light/60 max-w-lg mx-auto leading-relaxed">
               Revitalise your body, rejuvenate your soul in a tranquil setting
             </p>
 
@@ -104,7 +104,7 @@ function HomePage() {
           </motion.div>
         </div>
 
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce hidden sm:block">
           <div className="w-5 h-8 rounded-full border-2 border-gold/30 flex items-start justify-center pt-1.5">
             <div className="w-1 h-2 rounded-full bg-gold/50" />
           </div>
@@ -114,11 +114,11 @@ function HomePage() {
 
 
       {/* Services */}
-      <section id="services" className="py-24 bg-cream scroll-mt-16">
-        <div className="mx-auto max-w-6xl px-6">
+      <section id="services" className="py-16 sm:py-24 bg-cream scroll-mt-16">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <motion.div {...fadeIn} className="text-center mb-10">
             <p className="text-xs tracking-[0.25em] uppercase text-gold-dark mb-3">What We Offer</p>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-purple-deep">Our Services</h2>
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-purple-deep">Our Services</h2>
             <GoldDivider />
           </motion.div>
 
@@ -127,7 +127,7 @@ function HomePage() {
               <button
                 key={d}
                 onClick={() => setActiveDuration(d)}
-                className={`px-5 py-2 text-xs font-semibold tracking-wider uppercase rounded-sm border transition-all duration-200 ${
+                className={`px-4 sm:px-5 py-2 text-xs font-semibold tracking-wider uppercase rounded-sm border transition-all duration-200 ${
                   activeDuration === d
                     ? "bg-purple-deep text-gold border-purple-deep shadow-md"
                     : "bg-transparent text-purple-deep border-purple-mid/30 hover:border-purple-deep/50 hover:bg-purple-deep/5"
@@ -145,7 +145,7 @@ function HomePage() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
               transition={{ duration: 0.25, ease: "easeInOut" }}
-              className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto"
+              className="grid sm:grid-cols-2 gap-4 sm:gap-6 max-w-5xl mx-auto"
             >
               {filteredServices.map((s) => {
                 const visiblePricing = activeDuration === "All"
@@ -155,12 +155,12 @@ function HomePage() {
                 return (
                   <div
                     key={s.name}
-                    className="bg-card rounded-lg p-7 border border-border hover:shadow-lg transition-shadow duration-300 group"
+                    className="bg-card rounded-lg p-5 sm:p-7 border border-border hover:shadow-lg transition-shadow duration-300 group"
                   >
                     <div className="flex items-start justify-between mb-3">
-                      <h3 className="font-display text-lg font-semibold text-purple-deep group-hover:text-purple-mid transition-colors">{s.name}</h3>
+                      <h3 className="font-display text-base sm:text-lg font-semibold text-purple-deep group-hover:text-purple-mid transition-colors">{s.name}</h3>
                     </div>
-                    <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground mb-3">
+                    <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs text-muted-foreground mb-3">
                       {visiblePricing.map((p) => (
                         <span key={p.duration} className="inline-flex items-center gap-1">
                           <Clock className="h-3 w-3" /> {p.duration} — <span className="font-bold text-gold-dark">{p.price}</span>
@@ -177,20 +177,20 @@ function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section id="testimonials" className="py-24 relative overflow-hidden scroll-mt-20">
+      <section id="testimonials" className="py-16 sm:py-24 relative overflow-hidden scroll-mt-20">
         <div className="absolute inset-0 bg-purple-deep" />
         <div
           className="absolute inset-0 opacity-8"
           style={{ backgroundImage: `url(${thaiPattern})`, backgroundSize: "200px" }}
         />
-        <div className="relative z-10 mx-auto max-w-5xl px-6">
-          <motion.div {...fadeIn} className="text-center mb-16">
+        <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6">
+          <motion.div {...fadeIn} className="text-center mb-10 sm:mb-16">
             <p className="text-xs tracking-[0.25em] uppercase text-gold/60 mb-3">What Our Clients Say</p>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-gold">Testimonials</h2>
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-gold">Testimonials</h2>
             <GoldDivider />
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
             {reviews.map((r, i) => (
               <motion.div
                 key={r.name}
@@ -198,7 +198,7 @@ function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.12 }}
-                className="bg-purple-mid/15 backdrop-blur-sm border border-gold/10 rounded-xl p-7 flex flex-col justify-between"
+                className="bg-purple-mid/15 backdrop-blur-sm border border-gold/10 rounded-xl p-5 sm:p-7 flex flex-col justify-between"
               >
                 <div>
                   <div className="flex gap-0.5 mb-5">
@@ -226,17 +226,17 @@ function HomePage() {
       </section>
 
       {/* Contact */}
-      <section id="contact" className="py-24 bg-cream scroll-mt-16">
-        <div className="mx-auto max-w-6xl px-6">
-          <motion.div {...fadeIn} className="text-center mb-16">
+      <section id="contact" className="py-16 sm:py-24 bg-cream scroll-mt-16">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <motion.div {...fadeIn} className="text-center mb-10 sm:mb-16">
             <p className="text-xs tracking-[0.25em] uppercase text-gold-dark mb-3">Get In Touch</p>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-purple-deep">Contact Us</h2>
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-purple-deep">Contact Us</h2>
             <GoldDivider />
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8">
             <motion.div {...fadeIn} className="space-y-6">
-              <div className="bg-card rounded-lg p-8 border border-border">
+              <div className="bg-card rounded-lg p-6 sm:p-8 border border-border">
                 {[
                   { icon: MapPin, label: "Address", value: "58 John Street Upper, Gardens,\nKilkenny, R95 K75T" },
                   { icon: Phone, label: "Phone", value: "085 749 6528", href: "tel:0857496528" },
@@ -246,30 +246,29 @@ function HomePage() {
                     <div className="w-10 h-10 rounded-full bg-purple-deep/10 flex items-center justify-center flex-shrink-0">
                       <Icon className="h-5 w-5 text-purple-deep" />
                     </div>
-                    <div>
+                    <div className="min-w-0">
                       <h3 className="font-display font-semibold text-foreground text-sm mb-1">{label}</h3>
                       {href ? (
                         <a href={href} className="text-sm text-gold-dark hover:text-purple-deep transition-colors font-medium">{value}</a>
                       ) : (
-                        <p className="text-sm text-muted-foreground whitespace-pre-line">{value}</p>
+                        <p className="text-sm text-muted-foreground whitespace-pre-line break-words">{value}</p>
                       )}
                     </div>
                   </div>
                 ))}
               </div>
-
             </motion.div>
 
             <motion.div
               {...fadeIn}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="rounded-lg overflow-hidden border border-border h-[400px] md:h-auto"
+              className="rounded-lg overflow-hidden border border-border h-[350px] sm:h-[400px] md:h-auto"
             >
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1193.5!2d-7.2557!3d52.6565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x484355a4a98fa5e3%3A0x62e1a12b2f3a8e0c!2s58%20John%20Street%20Upper%2C%20Gardens%2C%20Kilkenny%2C%20R95%20K75T!5e0!3m2!1sen!2sie!4v1"
                 width="100%"
                 height="100%"
-                style={{ border: 0, minHeight: "400px" }}
+                style={{ border: 0, minHeight: "350px" }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"

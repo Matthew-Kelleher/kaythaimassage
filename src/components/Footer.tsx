@@ -4,8 +4,8 @@ import logoIcon from "@/assets/logo.png";
 export default function Footer() {
   return (
     <footer className="bg-purple-deep text-gold-light/70">
-      <div className="mx-auto max-w-7xl px-6 py-16">
-        <div className="grid md:grid-cols-3 gap-12">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-16">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-12">
           <div>
             <div className="flex items-center -space-x-1 mb-4">
               <img src={logoIcon} alt="" width={52} height={52} className="h-[52px] w-auto" />
@@ -20,15 +20,15 @@ export default function Footer() {
             <h3 className="font-display text-base font-semibold mb-4 text-gold">Visit Us</h3>
             <div className="space-y-3 text-sm">
               <div className="flex items-start gap-3">
-                <MapPin className="h-4 w-4 mt-0.5 text-gold/60" />
+                <MapPin className="h-4 w-4 mt-0.5 text-gold/60 flex-shrink-0" />
                 <span>58 John Street Upper, Gardens,<br />Kilkenny, R95 K75T</span>
               </div>
               <div className="flex items-center gap-3">
-                <Phone className="h-4 w-4 text-gold/60" />
+                <Phone className="h-4 w-4 text-gold/60 flex-shrink-0" />
                 <a href="tel:0857496528" className="hover:text-gold transition-colors">085 749 6528</a>
               </div>
               <div className="flex items-center gap-3">
-                <Clock className="h-4 w-4 text-gold/60" />
+                <Clock className="h-4 w-4 text-gold/60 flex-shrink-0" />
                 <span>Mon – Sat: 10 AM – 8 PM</span>
               </div>
             </div>

@@ -20,9 +20,9 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-purple-deep border-b border-purple-mid/30 shadow-lg">
       <div className="mx-auto max-w-7xl flex items-center justify-between px-6 py-2">
-        <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="flex items-center -space-x-1">
-          <img src={logoIcon} alt="Kay Thai Massage" width={56} height={56} className="h-[56px] w-auto" />
-          <span className="font-display text-lg font-bold text-gold tracking-wide uppercase">
+        <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="flex items-center -space-x-1 min-w-0">
+          <img src={logoIcon} alt="Kay Thai Massage" width={56} height={56} className="h-[48px] sm:h-[56px] w-auto flex-shrink-0" />
+          <span className="font-display text-base sm:text-lg font-bold text-gold tracking-wide uppercase truncate">
             Kay Thai Massage
           </span>
         </a>
