@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { Star, MapPin, Phone, Clock, ArrowRight } from "lucide-react";
-import kayHeroBg from "@/assets/kay-hero-bg.jpg";
+
 import thaiPattern from "@/assets/thai-pattern.jpg";
 
 
@@ -53,13 +53,10 @@ function HomePage() {
   return (
     <div>
       {/* Hero */}
-      <section id="hero" className="relative min-h-screen flex items-end justify-center overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={kayHeroBg} alt="Kay Thai Massage" width={1080} height={1920} className="h-full w-full object-cover object-top" />
-          <div className="absolute inset-0 bg-gradient-to-t from-purple-deep via-purple-deep/40 to-transparent" />
-        </div>
+      <section id="hero" className="relative min-h-screen flex items-end justify-center overflow-hidden bg-purple-deep">
+        <div className="absolute inset-0 bg-gradient-to-b from-purple-mid/20 via-purple-deep to-purple-deep" />
 
-        <div className="relative z-10 mx-auto max-w-4xl px-6 pb-20 pt-[60vh] text-center w-full">
+        <div className="relative z-10 mx-auto max-w-4xl px-6 pb-20 pt-40 text-center w-full">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
