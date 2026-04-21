@@ -84,26 +84,12 @@ function HomePage() {
             </p>
 
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="tel:0857496528"
-                className="inline-flex items-center justify-center gap-2 bg-gold px-8 py-3.5 text-sm font-semibold tracking-wider uppercase text-purple-deep hover:bg-gold-light transition-colors"
-              >
-                <Phone className="h-4 w-4" />
-                Book Now: 085 749 6528
-              </a>
               <button
                 onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })}
                 className="inline-flex items-center justify-center gap-2 border border-gold/30 px-8 py-3.5 text-sm font-medium tracking-wider uppercase text-gold-light/80 hover:bg-gold/10 transition-colors"
               >
                 View Services
               </button>
-            </div>
-
-            <div className="flex items-center justify-center gap-1 mt-10">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-4 w-4 fill-gold text-gold" />
-              ))}
-              <span className="ml-2 text-sm text-gold-light/60">4.8/5 · 46 reviews</span>
             </div>
           </motion.div>
         </div>
