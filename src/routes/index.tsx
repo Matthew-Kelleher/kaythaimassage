@@ -126,10 +126,13 @@ function HomePage() {
               >
                 <div className="flex items-start justify-between mb-3">
                   <h3 className="font-display text-lg font-semibold text-purple-deep group-hover:text-purple-mid transition-colors">{s.name}</h3>
-                  <span className="text-sm font-bold text-gold-dark whitespace-nowrap ml-3">{s.price}</span>
                 </div>
-                <div className="flex items-center gap-1 text-xs text-muted-foreground mb-3">
-                  <Clock className="h-3 w-3" /> {s.duration}
+                <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground mb-3">
+                  {s.pricing.map((p) => (
+                    <span key={p.duration} className="inline-flex items-center gap-1">
+                      <Clock className="h-3 w-3" /> {p.duration} — <span className="font-bold text-gold-dark">{p.price}</span>
+                    </span>
+                  ))}
                 </div>
                 <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
               </motion.div>
