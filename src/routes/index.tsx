@@ -133,17 +133,6 @@ function HomePage() {
               </motion.div>
             ))}
           </div>
-
-          <motion.div {...fadeIn} className="text-center mt-12 bg-purple-deep/5 border border-purple-deep/10 rounded-lg p-8 max-w-lg mx-auto">
-            <p className="text-sm text-muted-foreground mb-4">To book an appointment, give us a call:</p>
-            <a
-              href="tel:0857496528"
-              className="inline-flex items-center gap-2 bg-purple-deep px-8 py-3.5 text-sm font-semibold tracking-wider uppercase text-gold hover:bg-purple-mid transition-colors"
-            >
-              <Phone className="h-4 w-4" />
-              085 749 6528
-            </a>
-          </motion.div>
         </div>
       </section>
 
@@ -229,13 +218,6 @@ function HomePage() {
                 ))}
               </div>
 
-              <a
-                href="tel:0857496528"
-                className="w-full inline-flex items-center justify-center gap-2 bg-purple-deep px-8 py-3.5 text-sm font-semibold tracking-wider uppercase text-gold hover:bg-purple-mid transition-colors"
-              >
-                <Phone className="h-4 w-4" />
-                Call to Book Now
-              </a>
             </motion.div>
 
             <motion.div
