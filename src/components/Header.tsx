@@ -1,6 +1,6 @@
 import { Phone, Menu, X } from "lucide-react";
 import { useState } from "react";
-import lotusIcon from "@/assets/lotus-icon.png";
+import logoIcon from "@/assets/logo.png";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -14,7 +14,7 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-purple-deep/95 backdrop-blur-md border-b border-purple-mid/30">
       <div className="mx-auto max-w-7xl flex items-center justify-between px-6 py-4">
         <a href="#hero" onClick={() => scrollTo("hero")} className="flex items-center gap-3">
-          <img src={lotusIcon} alt="Kay Thai Massage" width={44} height={44} />
+          <img src={logoIcon} alt="Kay Thai Massage" width={44} height={44} />
           <span className="font-display text-xl font-semibold text-gold tracking-tight">
             Kay Thai Massage
           </span>
