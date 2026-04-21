@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Star, MapPin, Phone, Clock, ArrowRight } from "lucide-react";
 import heroSpa from "@/assets/hero-spa.jpg";
 import thaiPattern from "@/assets/thai-pattern.jpg";
-import kayBrochure from "@/assets/kay-brochure.jpg";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -115,57 +115,6 @@ function HomePage() {
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
           <div className="w-5 h-8 rounded-full border-2 border-gold/30 flex items-start justify-center pt-1.5">
             <div className="w-1 h-2 rounded-full bg-gold/50" />
-          </div>
-        </div>
-      </section>
-
-      {/* About */}
-      <section id="about" className="py-24 bg-cream">
-        <div className="mx-auto max-w-6xl px-6">
-          <motion.div {...fadeIn} className="text-center mb-16">
-            <p className="text-xs tracking-[0.25em] uppercase text-gold-dark mb-3">Who We Are</p>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-purple-deep">About Us</h2>
-            <GoldDivider />
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <motion.div {...fadeIn}>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                We provide authentic Thai massage therapy, combining traditional techniques passed down through generations. Our highly trained therapists bring years of experience to deliver exceptional, personalised treatments.
-              </p>
-              <p className="text-muted-foreground leading-relaxed mb-8">
-                Discover the perfect escape from the hustle and bustle at Kay Thai Massage. Conveniently located at 58 John Street Upper, Kilkenny, we offer the ultimate destination for relaxation and rejuvenation.
-              </p>
-
-              <div className="grid grid-cols-3 gap-4">
-                {[
-                  ["🕐", "Mon – Sat", "10 AM – 8 PM"],
-                  ["⭐", "4.8 Rated", "46+ Reviews"],
-                  ["📍", "City Centre", "Kilkenny"],
-                ].map(([icon, title, sub]) => (
-                  <div key={title} className="text-center p-4 bg-background rounded-lg border border-border">
-                    <span className="text-2xl">{icon}</span>
-                    <p className="text-xs font-semibold text-foreground mt-2">{title}</p>
-                    <p className="text-xs text-muted-foreground">{sub}</p>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-
-            <motion.div
-              {...fadeIn}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="relative"
-            >
-              <div className="rounded-lg overflow-hidden shadow-xl">
-                <img
-                  src={kayBrochure}
-                  alt="Kay Thai Massage brochure"
-                  loading="lazy"
-                  className="w-full h-auto object-cover"
-                />
-              </div>
-            </motion.div>
           </div>
         </div>
       </section>
