@@ -18,7 +18,7 @@ export default function Header() {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-purple-deep/95 backdrop-blur-md border-b border-purple-mid/30 shadow-lg" : "bg-transparent border-b border-transparent"}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-purple-deep/95 backdrop-blur-md border-b border-purple-mid/30 shadow-lg" : "bg-gradient-to-b from-black/60 via-black/30 to-transparent border-b border-transparent"}`}>
       <div className="mx-auto max-w-7xl flex items-center justify-between px-6 py-2">
         <a href="#hero" onClick={() => scrollTo("hero")} className="flex items-center -space-x-1">
           <img src={logoIcon} alt="Kay Thai Massage" width={56} height={56} className="h-[56px] w-auto" />
