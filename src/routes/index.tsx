@@ -240,7 +240,7 @@ function HomePage() {
                 {[
                   { icon: MapPin, label: "Address", value: "58 John Street Upper, Gardens,\nKilkenny, R95 K75T" },
                   { icon: Phone, label: "Phone", value: "085 749 6528", href: "tel:0857496528" },
-                  { icon: Clock, label: "Opening Hours", value: "Monday – Saturday: 10 AM – 8 PM" },
+                  { icon: Clock, label: "Opening Hours", value: "Monday – Saturday: 10 AM – 7 PM" },
                 ].map(({ icon: Icon, label, value, href }, i) => (
                   <div key={label} className={`flex items-start gap-4 ${i > 0 ? "mt-6 pt-6 border-t border-border" : ""}`}>
                     <div className="w-10 h-10 rounded-full bg-purple-deep/10 flex items-center justify-center flex-shrink-0">
