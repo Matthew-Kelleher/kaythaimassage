@@ -1,5 +1,5 @@
 import { MapPin, Phone, Clock } from "lucide-react";
-import lotusIcon from "@/assets/lotus-icon.png";
+import logoIcon from "@/assets/logo.png";
 
 export default function Footer() {
   return (
@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-12">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <img src={lotusIcon} alt="" width={28} height={28} />
+              <img src={logoIcon} alt="" width={56} height={56} className="h-[56px] w-auto" />
               <span className="font-display text-lg font-semibold text-gold">Kay Thai Massage</span>
             </div>
             <p className="text-sm leading-relaxed">
@@ -37,7 +37,7 @@ export default function Footer() {
           <div>
             <h3 className="font-display text-base font-semibold mb-4 text-gold">Quick Links</h3>
             <div className="space-y-2 text-sm">
-              {["about", "services", "testimonials", "contact"].map((id) => (
+              {["services", "testimonials", "contact"].map((id) => (
                 <button
                   key={id}
                   onClick={() => document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })}
