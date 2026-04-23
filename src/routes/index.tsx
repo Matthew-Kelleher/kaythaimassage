@@ -66,7 +66,7 @@ function HomePage() {
       <section id="hero" className="relative min-h-[100svh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img src={heroBg} alt="Kay Thai Massage" width={1080} height={1920} className="h-full w-full object-cover object-center sm:object-[center_30%]" />
-          <div className="absolute inset-0 bg-gradient-to-t from-purple-deep via-purple-deep/60 to-purple-deep/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-purple-deep via-purple-deep/45 to-purple-deep/15" />
         </div>
 
         <div className="relative z-10 mx-auto max-w-4xl px-6 sm:px-8 py-24 text-center w-full">
@@ -79,17 +79,17 @@ function HomePage() {
               Authentic Thai Massage in Kilkenny
             </p>
 
-            <h1 className="font-display text-5xl sm:text-6xl md:text-8xl font-bold text-gold leading-tight tracking-tight">
+            <h1 className="font-display text-6xl sm:text-7xl md:text-9xl font-bold text-gold leading-tight tracking-tight">
               Kay Thai Massage
             </h1>
 
             <GoldDivider />
 
-            <p className="font-script text-xl sm:text-2xl md:text-3xl text-gold-light/80 mt-4 italic">
+            <p className="font-script text-2xl sm:text-3xl md:text-4xl text-gold-light/80 mt-4 italic">
               Original Thai Massage
             </p>
 
-            <p className="mt-6 text-sm sm:text-base text-gold-light/60 max-w-lg mx-auto leading-relaxed">
+            <p className="mt-6 text-base sm:text-lg text-gold-light/60 max-w-lg mx-auto leading-relaxed">
               Revitalise your body, rejuvenate your soul in a tranquil setting
             </p>
 
