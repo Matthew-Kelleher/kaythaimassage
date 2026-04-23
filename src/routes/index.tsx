@@ -66,7 +66,7 @@ function HomePage() {
       <section id="hero" className="relative min-h-[100svh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img src={heroBg} alt="Kay Thai Massage" width={1080} height={1920} className="h-full w-full object-cover object-center sm:object-[center_30%]" />
-          <div className="absolute inset-0 bg-gradient-to-t from-purple-deep via-purple-deep/45 to-purple-deep/15" />
+          <div className="absolute inset-0 bg-gradient-to-t from-purple-deep/70 via-purple-deep/35 to-purple-deep/10" />
         </div>
 
         <div className="relative z-10 mx-auto max-w-4xl px-6 sm:px-8 py-24 text-center w-full">
