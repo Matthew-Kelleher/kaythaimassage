@@ -239,7 +239,7 @@ function HomePage() {
               <div className="bg-card rounded-lg p-6 sm:p-8 border border-border">
                 {[
                   { icon: MapPin, label: "Address", value: "58 John Street Upper, Gardens,\nKilkenny, R95 K75T" },
-                  { icon: Phone, label: "Phone", value: "085 749 6528", href: "tel:0857496528" },
+                  { icon: Phone, label: "Phone", value: "085 749 6528", href: "tel:+353857496528" },
                   { icon: Clock, label: "Opening Hours", value: "Monday – Saturday: 10 AM – 7 PM" },
                 ].map(({ icon: Icon, label, value, href }, i) => (
                   <div key={label} className={`flex items-start gap-4 ${i > 0 ? "mt-6 pt-6 border-t border-border" : ""}`}>
