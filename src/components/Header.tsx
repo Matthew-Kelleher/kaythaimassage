@@ -50,7 +50,7 @@ export default function Header() {
         </nav>
 
         <a
-          href="tel:0857496528"
+          href="tel:+353857496528"
           className="hidden lg:inline-flex items-center gap-2 rounded-sm bg-gold px-6 py-2.5 text-sm font-semibold tracking-wider uppercase text-purple-deep hover:bg-gold-light transition-colors"
         >
           <Phone className="h-4 w-4" />
@@ -84,7 +84,7 @@ export default function Header() {
             </button>
           ))}
           <a
-            href="tel:0857496528"
+            href="tel:+353857496528"
             className="inline-flex items-center justify-center gap-2 bg-gold px-5 py-2.5 text-xs font-semibold uppercase text-purple-deep"
           >
             <Phone className="h-3.5 w-3.5" /> Call to Book
