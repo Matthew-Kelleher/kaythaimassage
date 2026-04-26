@@ -28,6 +28,12 @@ export default function Header() {
         </a>
 
         <nav className="hidden lg:flex items-center gap-10">
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="text-sm font-medium tracking-widest uppercase text-gold-light/70 hover:text-gold transition-colors"
+          >
+            Home
+          </button>
           {[
             ["Services", "services"],
             ["Testimonials", "testimonials"],
@@ -58,6 +64,12 @@ export default function Header() {
 
       {open && (
         <div className="lg:hidden bg-purple-deep border-t border-purple-mid/30 px-6 py-4 flex flex-col gap-4">
+          <button
+            onClick={() => { setOpen(false); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+            className="text-sm font-medium text-gold-light/80 text-left hover:text-gold"
+          >
+            Home
+          </button>
           {[
             ["Services", "services"],
             ["Testimonials", "testimonials"],
