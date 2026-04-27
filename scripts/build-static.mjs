@@ -120,7 +120,29 @@ RewriteRule ^ index.html [L]
 # RewriteCond %{HTTPS} off
 # RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 `;
-writeFileSync(join(staticOut, ".htaccess"), htaccess, "utf8");
+// Use the hardened root .htaccess if present (blocks access to src/, node_modules/,
+// package.json, etc. — important when deploying via Hostinger Git, which clones
+// the WHOLE repo into public_html). Fall back to the minimal SPA-only version.
+const rootHtaccess = join(root, ".htaccess");
+if (existsSync(rootHtaccess)) {
+  cpSync(rootHtaccess, join(staticOut, ".htaccess"));
+} else {
+  writeFileSync(join(staticOut, ".htaccess"), htaccess, "utf8");
+}
+
+// Also mirror the build output to the repo root so Hostinger's "Deploy from
+// GitHub" feature (which clones the repo into public_html and does NOT run any
+// build step) serves the site correctly. The .htaccess above blocks access to
+// any source files that happen to live alongside.
+console.log("▶ Mirroring build output to repo root for Hostinger Git deploy...");
+const rootOutputs = ["assets", "images", "favicon.ico", "index.html"];
+for (const entry of rootOutputs) {
+  const src = join(staticOut, entry);
+  const dest = join(root, entry);
+  if (!existsSync(src)) continue;
+  if (existsSync(dest)) rmSync(dest, { recursive: true, force: true });
+  cpSync(src, dest, { recursive: true });
+}
 
 // Quick size summary
 function dirSize(p) {
