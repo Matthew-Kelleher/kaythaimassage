@@ -73,29 +73,31 @@ function HomePage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
+            style={{ textShadow: "0 2px 8px rgba(76, 29, 149, 0.9), 0 1px 3px rgba(0,0,0,0.7)" }}
           >
-            <p className="text-xs sm:text-sm tracking-[0.3em] uppercase text-gold-light mb-6 font-medium">
+            <p className="text-xs sm:text-sm tracking-[0.3em] uppercase text-gold-light mb-6 font-semibold">
               Authentic Thai Massage in Kilkenny
             </p>
 
-            <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-gold leading-tight tracking-tight whitespace-nowrap">
+            <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-gold leading-tight tracking-tight whitespace-nowrap" style={{ textShadow: "0 4px 16px rgba(76, 29, 149, 0.95), 0 2px 6px rgba(0,0,0,0.85), 0 0 30px rgba(0,0,0,0.5)" }}>
               Kay Thai Massage
             </h1>
 
             <GoldDivider />
 
-            <p className="font-script text-2xl sm:text-3xl md:text-4xl text-gold-light mt-4 italic">
+            <p className="font-script text-2xl sm:text-3xl md:text-4xl text-gold-light mt-4 italic" style={{ textShadow: "0 3px 12px rgba(76, 29, 149, 0.95), 0 1px 4px rgba(0,0,0,0.8)" }}>
               Original Thai Massage
             </p>
 
-            <p className="mt-6 text-base sm:text-lg text-gold-light max-w-lg mx-auto leading-relaxed font-medium">
+            <p className="mt-6 text-base sm:text-lg text-white max-w-lg mx-auto leading-relaxed font-semibold" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.85), 0 1px 3px rgba(0,0,0,0.7)" }}>
               Revitalise your body, rejuvenate your soul in a tranquil setting
             </p>
 
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })}
-                className="inline-flex items-center justify-center gap-2 border-2 border-gold/60 px-8 py-3.5 text-sm font-semibold tracking-wider uppercase text-gold-light hover:bg-gold/20 transition-colors"
+                className="inline-flex items-center justify-center gap-2 border-2 border-gold/80 px-8 py-3.5 text-sm font-semibold tracking-wider uppercase text-gold-light hover:bg-gold/20 transition-colors"
+                style={{ textShadow: "0 2px 6px rgba(0,0,0,0.7)", boxShadow: "0 4px 20px rgba(0,0,0,0.4)" }}
               >
                 View Services
               </button>
