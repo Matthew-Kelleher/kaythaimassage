@@ -65,7 +65,7 @@ function HomePage() {
       {/* Hero */}
       <section id="hero" className="relative min-h-[100svh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={heroBg} alt="Kay Thai Massage" width={1080} height={1920} className="h-full w-full object-cover object-center sm:object-[center_30%]" />
+          <img src={heroBg} alt="Kay Thai Massage" width={1080} height={1920} className="h-full w-full object-cover object-center sm:object-[center_30%]" style={{ filter: "brightness(1.25) saturate(1.15)" }} />
           <div className="absolute inset-0 bg-gradient-to-t from-purple-deep/15 via-transparent to-transparent" />
         </div>
 
