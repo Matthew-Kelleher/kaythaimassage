@@ -1,58 +1,67 @@
 # Deploying to Hostinger
 
-This site is fully static (no backend, no database). It can run on any
-shared hosting plan — including Hostinger's cheapest tier.
+This site is fully static (no backend, no database). The built site is
+**committed to the repo root** so Hostinger's "Deploy from GitHub" feature
+works with zero build configuration.
 
-## 1. Build the static site locally
+## How it works
 
-```bash
-bun install        # first time only
-bun run build:static
-```
-
-This produces a `dist-static/` folder containing:
+After running `bun run build:static`, these files/folders are written to the
+repo root (and committed to GitHub):
 
 - `index.html`
-- `assets/` (hashed JS, CSS, images)
-- `images/` (hero background, etc.)
+- `assets/`     — hashed JS, CSS, images
+- `images/`     — hero background, etc.
 - `favicon.ico`
-- `.htaccess` (SPA routing + caching for Apache)
+- `.htaccess`   — SPA routing, caching, **and access rules that block
+                  `src/`, `node_modules/`, `package.json`, etc.** from being
+                  served over HTTP.
 
-## 2. Upload to Hostinger
+(They also live in `dist-static/` for manual FTP uploads — both stay in sync.)
 
-**Option A — File Manager (easiest):**
-1. Log in to hPanel → **Files → File Manager**.
-2. Open the `public_html` folder.
-3. Delete any default `index.html` / `default.php` already there.
-4. Upload the **contents** of `dist-static/` (not the folder itself) — you can
-   zip the folder, upload the zip, and use "Extract" in File Manager.
+## Option A — Hostinger Git deploy (recommended)
 
-**Option B — FTP (FileZilla, etc.):**
-- Host: your Hostinger FTP host
-- User / password: from hPanel → **Files → FTP Accounts**
-- Drag the contents of `dist-static/` into `/public_html/`.
+1. In hPanel → **Advanced → Git**, click **Create repository**.
+2. Repository address: your GitHub repo URL (HTTPS).
+3. Branch: `main` (or whichever branch you publish from).
+4. Install path: **`/public_html`**
+5. Save. Hostinger will clone the repo into `public_html`. Because the built
+   files sit at the repo root, the site works immediately.
+6. Whenever you push new changes, click **Manual Deploy** in hPanel (or set
+   up the auto-deploy webhook Hostinger provides).
 
-## 3. Point your domain
+> ⚠️ Hostinger's Git deploy does **not** run `npm install` or any build
+> command. That's why we commit the built output. Every time you change the
+> site, run `bun run build:static` locally and commit the updated `assets/`,
+> `images/`, `index.html`, and `.htaccess`.
 
-In hPanel → **Domains**, attach your domain to the hosting plan, then enable
-**SSL** (free Let's Encrypt) under **Security → SSL**.
+## Option B — Manual upload (FTP / File Manager)
 
-After SSL is active, you can uncomment the "Force HTTPS" block at the bottom
-of `.htaccess` to redirect all traffic to HTTPS.
+1. Run `bun run build:static`.
+2. Upload the **contents** of `dist-static/` into `public_html/` (overwrite
+   existing files). Browsers pick up new assets automatically — filenames
+   are hashed.
 
-## 4. Updating the site
+## Domain & SSL
 
-Whenever you change content:
+In hPanel → **Domains**, attach your domain, then enable **SSL** (free
+Let's Encrypt) under **Security → SSL**. After SSL is active, uncomment the
+"Force HTTPS" block at the bottom of `.htaccess`.
+
+## Why the source files in the repo are safe
+
+When Hostinger clones the repo, folders like `src/`, `node_modules/`,
+`scripts/`, and files like `package.json` end up inside `public_html`. The
+root `.htaccess` returns **404** for any request to those paths, so they
+are never exposed.
+
+## Updating the site
 
 ```bash
 bun run build:static
+git add -A
+git commit -m "Rebuild site"
+git push
 ```
 
-Then re-upload the contents of `dist-static/` (overwrite existing files).
-Browsers will pick up new assets automatically because filenames are hashed.
-
-## Notes
-
-- No Node.js, PHP, or database is required on Hostinger.
-- The `.htaccess` file handles client-side routing (e.g. `/services` deep links).
-- All images live in `dist-static/images/` and `dist-static/assets/`.
+Then click **Manual Deploy** in hPanel (or wait for the auto-deploy webhook).
