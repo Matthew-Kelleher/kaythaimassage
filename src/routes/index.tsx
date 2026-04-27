@@ -66,7 +66,8 @@ function HomePage() {
       <section id="hero" className="relative min-h-[100svh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img src={heroBg} alt="Kay Thai Massage" width={1080} height={1920} className="h-full w-full object-cover object-center sm:object-[center_30%]" style={{ filter: "brightness(1.25) saturate(1.15)" }} />
-          <div className="absolute inset-0 bg-gradient-to-t from-purple-deep/15 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-purple-deep/40 via-purple-deep/20 to-purple-deep/30" />
+          <div className="absolute inset-0 bg-black/20" />
         </div>
 
         <div className="relative z-10 mx-auto max-w-4xl px-6 sm:px-8 py-24 text-center w-full">
@@ -74,29 +75,30 @@ function HomePage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
+            style={{ textShadow: "0 2px 12px rgba(0,0,0,0.6), 0 1px 4px rgba(0,0,0,0.5)" }}
           >
-            <p className="text-xs tracking-[0.3em] uppercase text-gold-light/70 mb-6">
+            <p className="text-xs sm:text-sm tracking-[0.3em] uppercase text-gold-light mb-6 font-medium">
               Authentic Thai Massage in Kilkenny
             </p>
 
-            <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-gold leading-tight tracking-tight whitespace-nowrap">
+            <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-gold leading-tight tracking-tight whitespace-nowrap" style={{ textShadow: "0 4px 20px rgba(0,0,0,0.7), 0 2px 6px rgba(0,0,0,0.6)" }}>
               Kay Thai Massage
             </h1>
 
             <GoldDivider />
 
-            <p className="font-script text-2xl sm:text-3xl md:text-4xl text-gold-light/80 mt-4 italic">
+            <p className="font-script text-2xl sm:text-3xl md:text-4xl text-gold-light mt-4 italic">
               Original Thai Massage
             </p>
 
-            <p className="mt-6 text-base sm:text-lg text-gold-light/60 max-w-lg mx-auto leading-relaxed">
+            <p className="mt-6 text-base sm:text-lg text-gold-light/95 max-w-lg mx-auto leading-relaxed font-medium">
               Revitalise your body, rejuvenate your soul in a tranquil setting
             </p>
 
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })}
-                className="inline-flex items-center justify-center gap-2 border border-gold/30 px-8 py-3.5 text-sm font-medium tracking-wider uppercase text-gold-light/80 hover:bg-gold/10 transition-colors"
+                className="inline-flex items-center justify-center gap-2 border-2 border-gold/60 bg-purple-deep/40 backdrop-blur-sm px-8 py-3.5 text-sm font-semibold tracking-wider uppercase text-gold-light hover:bg-gold/20 transition-colors"
               >
                 View Services
               </button>
