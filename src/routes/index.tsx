@@ -65,7 +65,7 @@ function HomePage() {
       {/* Hero */}
       <section id="hero" className="relative min-h-[100svh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={heroBg} alt="Kay Thai Massage" width={1080} height={1920} className="h-full w-full object-cover object-[70%_25%] sm:object-[center_30%]" style={{ filter: "brightness(1.25) saturate(1.15)" }} />
+          <img src={heroBg} alt="Kay Thai Massage" width={1080} height={1920} className="h-full w-full object-cover object-[88%_25%] sm:object-[center_30%]" style={{ filter: "brightness(1.25) saturate(1.15)" }} />
         </div>
 
         <div className="relative z-10 mx-auto max-w-4xl px-6 sm:px-8 py-24 text-center w-full">
