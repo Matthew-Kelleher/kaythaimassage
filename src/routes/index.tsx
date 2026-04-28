@@ -205,7 +205,7 @@ function HomePage() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  transition={{ duration: 0.5, delay: Math.min(i, 4) * 0.06 }}
                   className={`relative bg-purple-mid/15 backdrop-blur-sm border border-gold/10 rounded-2xl p-6 sm:p-7 flex flex-col hover:border-gold/30 transition-colors ${colSpan} ${offset}`}
                 >
                   <Quote className="absolute top-5 right-5 h-6 w-6 text-gold/20" aria-hidden />
