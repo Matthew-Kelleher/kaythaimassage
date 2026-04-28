@@ -1,9 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { Star, MapPin, Phone, Clock, ArrowRight, Quote } from "lucide-react";
-const heroBg = "/images/hero-bg.png";
-import thaiPattern from "@/assets/thai-pattern.jpg";
+import { Star, MapPin, Phone, Clock, Quote } from "lucide-react";
+import thaiPattern from "@/assets/thai-pattern.webp";
 
 
 export const Route = createFileRoute("/")({
@@ -67,7 +66,10 @@ function HomePage() {
       {/* Hero */}
       <section id="hero" className="relative min-h-[100svh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img src={heroBg} alt="Kay Thai Massage" width={1080} height={1920} className="h-full w-full object-cover object-[88%_25%] sm:object-[center_30%]" style={{ filter: "brightness(1.25) saturate(1.15)" }} />
+          <picture>
+            <source media="(max-width: 640px)" srcSet="/images/hero-bg-mobile.webp" />
+            <img src="/images/hero-bg.webp" alt="Kay Thai Massage" width={1600} height={2844} fetchPriority="high" decoding="async" className="h-full w-full object-cover object-[88%_25%] sm:object-[center_30%]" style={{ filter: "brightness(1.25) saturate(1.15)" }} />
+          </picture>
         </div>
 
         <div className="relative z-10 mx-auto max-w-4xl px-6 sm:px-8 py-24 text-center w-full">
@@ -81,7 +83,7 @@ function HomePage() {
               Authentic Thai Massage in Kilkenny
             </p>
 
-            <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-gold leading-tight tracking-tight whitespace-nowrap" style={{ textShadow: "0 4px 16px rgba(76, 29, 149, 0.95), 0 2px 6px rgba(0,0,0,0.85), 0 0 30px rgba(0,0,0,0.5)" }}>
+            <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-gold leading-tight tracking-tight" style={{ textShadow: "0 4px 16px rgba(76, 29, 149, 0.95), 0 2px 6px rgba(0,0,0,0.85), 0 0 30px rgba(0,0,0,0.5)" }}>
               Kay Thai Massage
             </h1>
 
@@ -203,7 +205,7 @@ function HomePage() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  transition={{ duration: 0.5, delay: Math.min(i, 4) * 0.06 }}
                   className={`relative bg-purple-mid/15 backdrop-blur-sm border border-gold/10 rounded-2xl p-6 sm:p-7 flex flex-col hover:border-gold/30 transition-colors ${colSpan} ${offset}`}
                 >
                   <Quote className="absolute top-5 right-5 h-6 w-6 text-gold/20" aria-hidden />
