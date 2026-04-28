@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { Star, MapPin, Phone, Clock, ArrowRight } from "lucide-react";
+import { Star, MapPin, Phone, Clock, ArrowRight, Quote } from "lucide-react";
 const heroBg = "/images/hero-bg.png";
 import thaiPattern from "@/assets/thai-pattern.jpg";
 
@@ -193,36 +193,35 @@ function HomePage() {
             <GoldDivider />
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 auto-rows-fr">
             {reviews.map((r, i) => (
-              <motion.div
+              <motion.figure
                 key={r.name}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.12 }}
-                className="bg-purple-mid/15 backdrop-blur-sm border border-gold/10 rounded-xl p-5 sm:p-7 flex flex-col justify-between"
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="relative h-full bg-purple-mid/15 backdrop-blur-sm border border-gold/10 rounded-2xl p-6 sm:p-7 flex flex-col hover:border-gold/30 transition-colors"
               >
-                <div>
-                  <div className="flex gap-0.5 mb-5">
-                    {[...Array(r.rating)].map((_, j) => (
-                      <Star key={j} className="h-3.5 w-3.5 fill-gold text-gold" />
-                    ))}
-                  </div>
-                  <blockquote className="text-gold-light/70 text-sm leading-relaxed mb-6">
-                    "{r.text}"
-                  </blockquote>
+                <Quote className="absolute top-5 right-5 h-6 w-6 text-gold/20" aria-hidden />
+                <div className="flex gap-0.5 mb-4">
+                  {[...Array(r.rating)].map((_, j) => (
+                    <Star key={j} className="h-3.5 w-3.5 fill-gold text-gold" />
+                  ))}
                 </div>
-                <div className="flex items-center gap-3 pt-5 border-t border-gold/10">
-                  <div className="w-9 h-9 rounded-full bg-gold/10 flex items-center justify-center font-display text-sm font-semibold text-gold">
+                <blockquote className="text-gold-light/75 text-sm leading-relaxed flex-1">
+                  "{r.text}"
+                </blockquote>
+                <figcaption className="flex items-center gap-3 mt-6 pt-5 border-t border-gold/10">
+                  <div className="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center font-display text-sm font-semibold text-gold shrink-0">
                     {r.name.charAt(0)}
                   </div>
-                  <div>
-                    <p className="text-sm font-medium text-gold-light/90">{r.name}</p>
+                  <div className="min-w-0">
+                    <p className="text-sm font-medium text-gold-light/90 truncate">{r.name}</p>
                     <p className="text-xs text-gold-light/40">{r.time}</p>
                   </div>
-                </div>
-              </motion.div>
+                </figcaption>
+              </motion.figure>
             ))}
           </div>
         </div>
