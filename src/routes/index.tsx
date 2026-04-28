@@ -193,36 +193,40 @@ function HomePage() {
             <GoldDivider />
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 auto-rows-fr">
-            {reviews.map((r, i) => (
-              <motion.figure
-                key={r.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="relative h-full bg-purple-mid/15 backdrop-blur-sm border border-gold/10 rounded-2xl p-6 sm:p-7 flex flex-col hover:border-gold/30 transition-colors"
-              >
-                <Quote className="absolute top-5 right-5 h-6 w-6 text-gold/20" aria-hidden />
-                <div className="flex gap-0.5 mb-4">
-                  {[...Array(r.rating)].map((_, j) => (
-                    <Star key={j} className="h-3.5 w-3.5 fill-gold text-gold" />
-                  ))}
-                </div>
-                <blockquote className="text-gold-light/75 text-sm leading-relaxed flex-1">
-                  "{r.text}"
-                </blockquote>
-                <figcaption className="flex items-center gap-3 mt-6 pt-5 border-t border-gold/10">
-                  <div className="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center font-display text-sm font-semibold text-gold shrink-0">
-                    {r.name.charAt(0)}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-5 sm:gap-6">
+            {reviews.map((r, i) => {
+              const colSpan = "lg:col-span-2";
+              const offset = i === 3 ? "lg:col-start-2" : "";
+              return (
+                <motion.figure
+                  key={r.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className={`relative bg-purple-mid/15 backdrop-blur-sm border border-gold/10 rounded-2xl p-6 sm:p-7 flex flex-col hover:border-gold/30 transition-colors ${colSpan} ${offset}`}
+                >
+                  <Quote className="absolute top-5 right-5 h-6 w-6 text-gold/20" aria-hidden />
+                  <div className="flex gap-0.5 mb-4">
+                    {[...Array(r.rating)].map((_, j) => (
+                      <Star key={j} className="h-3.5 w-3.5 fill-gold text-gold" />
+                    ))}
                   </div>
-                  <div className="min-w-0">
-                    <p className="text-sm font-medium text-gold-light/90 truncate">{r.name}</p>
-                    <p className="text-xs text-gold-light/40">{r.time}</p>
-                  </div>
-                </figcaption>
-              </motion.figure>
-            ))}
+                  <blockquote className="text-gold-light/75 text-sm leading-relaxed flex-1">
+                    "{r.text}"
+                  </blockquote>
+                  <figcaption className="flex items-center gap-3 mt-6 pt-5 border-t border-gold/10">
+                    <div className="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center font-display text-sm font-semibold text-gold shrink-0">
+                      {r.name.charAt(0)}
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-sm font-medium text-gold-light/90 truncate">{r.name}</p>
+                      <p className="text-xs text-gold-light/40">{r.time}</p>
+                    </div>
+                  </figcaption>
+                </motion.figure>
+              );
+            })}
           </div>
         </div>
       </section>
