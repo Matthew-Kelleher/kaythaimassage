@@ -40,6 +40,8 @@ const reviews = [
   { name: "Conor K", rating: 5, time: "a month ago", text: "Unbelievable service. My back has been in bad shape for a while and I already feel the difference afterwards! Highly recommend." },
   { name: "John D", rating: 5, time: "11 months ago", text: "I'm going to Kay Thai Massage a long time now, and wouldn't change. They are so professional and go out of their way to fit an appointment for you. It's so relaxing and therapeutic — always leave feeling amazing." },
   { name: "Dea F", rating: 5, time: "2 years ago", text: "Had a massage here 3 times now. Last time was the best! My lower back was really painful and having difficulty to walk. The masseuse was very professional and knew exactly where the problem was. Highly recommend!" },
+  { name: "Marianne Thomson", rating: 5, time: "4 years ago", text: "Very friendly, safe. It's up 2 flights of stairs. Toilet there very clean, very relaxing atmosphere. Whatever treatment you choose, very good. Kay feels where your troubles might be and finds ways to help. So more than a massage. A treatment well worth." },
+  { name: "Kelly Kelly", rating: 5, time: "3 years ago", text: "Pleasant and accommodating right from my initial telephone call. Anna was professional and very thorough. She did a wonderful job on my trouble spots... definitely recommend, I look forward to returning. Thank you!!" },
 ];
 
 function GoldDivider() {
