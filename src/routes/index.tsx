@@ -1,9 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { Star, MapPin, Phone, Clock, ArrowRight, Quote } from "lucide-react";
-const heroBg = "/images/hero-bg.png";
-import thaiPattern from "@/assets/thai-pattern.jpg";
+import { Star, MapPin, Phone, Clock, Quote } from "lucide-react";
+import thaiPattern from "@/assets/thai-pattern.webp";
 
 
 export const Route = createFileRoute("/")({
