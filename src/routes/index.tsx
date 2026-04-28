@@ -264,8 +264,25 @@ function HomePage() {
             <motion.div
               {...fadeIn}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="rounded-lg overflow-hidden border border-border h-[350px] sm:h-[400px] md:h-auto"
+              className="relative rounded-lg overflow-hidden border border-border h-[350px] sm:h-[400px] md:h-auto"
             >
+              <a
+                href="https://share.google/FpyNY8vVXvA7BFyuo"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute top-3 left-3 z-10 bg-white rounded-lg shadow-lg px-3 py-2 flex items-center gap-2 hover:shadow-xl transition-shadow border border-border/50"
+                aria-label="View Kay Thai Massage Kilkenny on Google"
+              >
+                <div className="flex flex-col">
+                  <span className="text-sm font-semibold text-foreground leading-tight">Kay Thai Massage Kilkenny</span>
+                  <span className="text-xs text-muted-foreground leading-tight">58 John Street Upper, Gardens, Kil...</span>
+                  <div className="flex items-center gap-1 mt-0.5">
+                    <span className="text-sm font-semibold text-foreground">5.0</span>
+                    <Star className="h-3 w-3 fill-yellow-500 text-yellow-500" />
+                    <span className="text-xs text-blue-600 underline">(8)</span>
+                  </div>
+                </div>
+              </a>
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1193.5!2d-7.2557!3d52.6565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x484355a4a98fa5e3%3A0x62e1a12b2f3a8e0c!2s58%20John%20Street%20Upper%2C%20Gardens%2C%20Kilkenny%2C%20R95%20K75T!5e0!3m2!1sen!2sie!4v1"
                 width="100%"
