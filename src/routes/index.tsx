@@ -264,25 +264,8 @@ function HomePage() {
             <motion.div
               {...fadeIn}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="relative rounded-lg overflow-hidden border border-border h-[350px] sm:h-[400px] md:h-auto"
+              className="rounded-lg overflow-hidden border border-border h-[350px] sm:h-[400px] md:h-auto"
             >
-              <a
-                href="https://share.google/FpyNY8vVXvA7BFyuo"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="absolute top-3 left-3 z-10 bg-white rounded-lg shadow-lg px-3 py-2 flex items-center gap-2 hover:shadow-xl transition-shadow border border-border/50"
-                aria-label="View Kay Thai Massage Kilkenny on Google"
-              >
-                <div className="flex flex-col">
-                  <span className="text-sm font-semibold text-foreground leading-tight">Kay Thai Massage Kilkenny</span>
-                  <span className="text-xs text-muted-foreground leading-tight">58 John Street Upper, Gardens, Kil...</span>
-                  <div className="flex items-center gap-1 mt-0.5">
-                    <span className="text-sm font-semibold text-foreground">5.0</span>
-                    <Star className="h-3 w-3 fill-yellow-500 text-yellow-500" />
-                    <span className="text-xs text-blue-600 underline">(8)</span>
-                  </div>
-                </div>
-              </a>
               <iframe
                 src="https://maps.google.com/maps?q=Kay+Thai+Massage+Kilkenny&cid=1039743873148878720&hl=en&z=16&output=embed"
                 width="100%"
